@@ -1,3 +1,106 @@
+//functions
+
+function myFunc = functions(param1, param2){
+    // can create with out 'var'
+	
+	//code goes here;
+}
+
+
+--for loop--
+
+for (initialization; condition; mutator){
+
+//initialization = how to start
+
+//condition = when to end
+
+//mutator = how to increment;
+	
+doDomething();
+
+}
+
+for (i=0; i<9, i++){
+	
+	console.log(i);
+}
+
+--looping in arrays
+
+var countries = ['Argentina', 'China', 'England'];
+
+for(item in countries){
+
+//item is the index number or position in the array.
+//object is the array
+	
+console.log(countries[item]);
+
+}
+
+--if statements--
+ if (condition) {
+
+doSomething();
+
+ } else {
+
+ doSomethingElse();
+
+
+ }
+
+ "===" is a safer version for equals
+
+----replacing characters----
+
+var html = '<script src="http://hackyourwebsite.com/eviljavascript.js"></script>';
+
+var charEscape = function(_html) {
+    var newHTML = _html;
+    // How will you make sure that newHTML doesn't contain any < or > ?
+    // Your code goes here!
+
+    var re1 = /</gi; //gi allows replacement of all occurences.
+    var re2 = />/gi;
+    var char1 = '';
+ newHTML = newHTML.replace(re1, char1);
+ newHTML = newHTML.replace(re2, char1);
+    // Don't delete this line!
+    return newHTML;
+};
+
+// Did your code work? The line below will tell you!
+console.log(charEscape(html));
+
+
+----Blackout the resume.----
+
+
+if (document.getElementsByClassName("education-entry").length) === 0 ){
+	document.getElementById("Education").style.display = "none";
+
+
+}
+
+
+//hides the resume
+
+document.getElementById("Education").style.display = "none";
+
+
+//document
+the webpage in its current state
+
+
+//getElementById("education") is a dom method that grabs the an single page element object with the id given.
+
+in this case "education"
+//.style is a DOM Property
+.display = "none" //hides the element in question
+
+
 --JSON--
 var education = {
 

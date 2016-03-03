@@ -102,3 +102,18 @@ var projects = {
 }
 	]
 }
+
+   function displayWork(){
+
+      for (item in work.jobs){
+      $('#workExperience').append(HTMLworkStart);
+      var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[item].employer);
+      var formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[item].title);
+      var formattedEmployerTitle = formattedEmployer + formattedTitle;
+      $('.work-entry:last').append(formattedEmployerTitle);
+      $('.work-entry:last').append(HTMLworkLocation.replace('%data%', work.jobs[item].location));
+      $('.work-entry:last').append(HTMLworkDates.replace('%data%', work.jobs[item].dates));
+      $('.work-entry:last').append(HTMLworkDescription.replace('%data%', work.jobs[item].projectDescription));
+
+          }
+        }

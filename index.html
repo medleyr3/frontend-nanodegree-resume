@@ -133,26 +133,53 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
 
     if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('topContacts').style.display = 'none';
+      // document.getElementById('topContacts').style.display = 'none';
+      document.getElementById('topContacts').style.background = '#FFFFF';
     }
     if(document.getElementsByTagName('h1').length === 0) {
-      document.getElementById('header').style.display = 'none';
+      // document.getElementById('header').style.display = 'none';
     }
+
+
+
     if(document.getElementsByClassName('work-entry').length === 0) {
-      document.getElementById('workExperience').style.display = 'none';
+      // document.getElementById('workExperience').style.display = 'none';
+      document.getElementById('workExperience').style.background = '#FFFFF';
     }
     if(document.getElementsByClassName('project-entry').length === 0) {
-      document.getElementById('projects').style.display = 'none';
+      // document.getElementById('projects').style.display = 'none';
+      document.getElementById('projects').style.background = 'black';
     }
     if(document.getElementsByClassName('education-entry').length === 0) {
-      document.getElementById('education').style.display = 'none';
+      // document.getElementById('education').style.display = 'none';
+      document.getElementById('education').style.background = '#000000';
     }
     if(document.getElementsByClassName('flex-item').length === 0) {
-      document.getElementById('lets-connect').style.display = 'none';
+      // document.getElementById('lets-connect').style.display = 'none';
+    
+      document.getElementById('lets-connect').style.background = 'black';
+
     }
     if(document.getElementById('map') === null) {
-      document.getElementById('mapDiv').style.display = 'none';
+      // document.getElementById('mapDiv').style.display = 'none';
+      document.getElementById('mapDiv').style.background = 'black';
+
     }
+    if (bio.skills.length > 0) {
+    $('#header').append(HTMLskillsStart);
+    var numberOfSkills = bio.skills.length;
+    var currentSkill = 0;
+    while (currentSkill < numberOfSkills){
+      $('#skills').append(HTMLskills.replace('%data%',bio.skills[currentSkill]));
+      currentSkill = currentSkill + 1;
+
+    }
+}
+
+
+displayWork();
+
+    
   </script>
 </body>
 </html>
