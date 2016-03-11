@@ -1,0 +1,37 @@
+//monitor Events
+//var inputs = $('input');
+
+var input= $('#container');
+
+monitorEvents($('img'),"mouse");
+
+//Anatomy of an Event Listner
+
+$('#my-input').on('keypress', function(){
+	$('body').css('background-color'), 'red');
+
+});
+
+
+1. the target element to listen to
+
+$('#my-input')
+
+2. the event we want to react to
+
+on('keypress',
+
+3. the action to take in response
+function(){
+	//callback
+
+	console.log('The Event Happend!');
+
+});
+
+///
+
+$().on('keypress', function (){
+	
+
+});

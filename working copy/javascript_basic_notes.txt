@@ -1,3 +1,74 @@
+Jquery
+//
+
+.prepend() and .append() add children to the dom element.
+
+
+
+article2 = $('.featured');
+article3 = article2.next();
+article2.toggleClass('featured');  //don't need the dot. when using toggle class
+article3.toggleClass('featured');
+
+
+
+
+article3 = article2.next();
+article2 = toggleClass('featured');
+article3 = toggleClass('featured');
+
+
+var featured;
+featured = $('featured');
+featured.toggleClass('featured');
+
+
+$('#russ');  //is an id
+$('.tom'); // is a tom
+
+.parent(); // goes up one level
+.parents(); // can go up any level
+.children(); // can go down one level in the dom
+.find(); / / go down any level
+.siblings; returns sibilings of the current selecotor...
+
+// example I
+var articleList, h1, kids, parents;
+
+articleList = $('.article-list');
+
+h1 = articleList.siblings('h1');
+
+kids = articleList.children('*');
+
+parents = articleList.parents('div');
+
+
+
+//Encapsulation
+-everthigng is an object
+- means hold inside.
+
+ displayProjects = function(){
+	
+
+
+}
+
+
+//collecting click locations
+
+$(document).click(function)(loc){
+	//
+
+
+
+});
+
+//$(document).click() .. runs code everytime some one clicks on a page
+
+//loc is an event object
+
 //functions
 
 function myFunc = functions(param1, param2){

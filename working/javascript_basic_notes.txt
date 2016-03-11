@@ -1,0 +1,311 @@
+Jquery
+//
+
+.prepend() and .append() add children to the dom element.
+
+
+
+article2 = $('.featured');
+article3 = article2.next();
+article2.toggleClass('featured');  //don't need the dot. when using toggle class
+article3.toggleClass('featured');
+
+
+
+
+article3 = article2.next();
+article2 = toggleClass('featured');
+article3 = toggleClass('featured');
+
+
+var featured;
+featured = $('featured');
+featured.toggleClass('featured');
+
+
+$('#russ');  //is an id
+$('.tom'); // is a tom
+
+.parent(); // goes up one level
+.parents(); // can go up any level
+.children(); // can go down one level in the dom
+.find(); / / go down any level
+.siblings; returns sibilings of the current selecotor...
+
+// example I
+var articleList, h1, kids, parents;
+
+articleList = $('.article-list');
+
+h1 = articleList.siblings('h1');
+
+kids = articleList.children('*');
+
+parents = articleList.parents('div');
+
+
+
+//Encapsulation
+-everthigng is an object
+- means hold inside.
+
+ displayProjects = function(){
+	
+
+
+}
+
+
+//collecting click locations
+
+$(document).click(function)(loc){
+	//
+
+
+
+});
+
+//$(document).click() .. runs code everytime some one clicks on a page
+
+//loc is an event object
+
+//functions
+
+function myFunc = functions(param1, param2){
+    // can create with out 'var'
+	
+	//code goes here;
+}
+
+
+--for loop--
+
+for (initialization; condition; mutator){
+
+//initialization = how to start
+
+//condition = when to end
+
+//mutator = how to increment;
+	
+doDomething();
+
+}
+
+for (i=0; i<9, i++){
+	
+	console.log(i);
+}
+
+--looping in arrays
+
+var countries = ['Argentina', 'China', 'England'];
+
+for(item in countries){
+
+//item is the index number or position in the array.
+//object is the array
+	
+console.log(countries[item]);
+
+}
+
+--if statements--
+ if (condition) {
+
+doSomething();
+
+ } else {
+
+ doSomethingElse();
+
+
+ }
+
+ "===" is a safer version for equals
+
+----replacing characters----
+
+var html = '<script src="http://hackyourwebsite.com/eviljavascript.js"></script>';
+
+var charEscape = function(_html) {
+    var newHTML = _html;
+    // How will you make sure that newHTML doesn't contain any < or > ?
+    // Your code goes here!
+
+    var re1 = /</gi; //gi allows replacement of all occurences.
+    var re2 = />/gi;
+    var char1 = '';
+ newHTML = newHTML.replace(re1, char1);
+ newHTML = newHTML.replace(re2, char1);
+    // Don't delete this line!
+    return newHTML;
+};
+
+// Did your code work? The line below will tell you!
+console.log(charEscape(html));
+
+
+----Blackout the resume.----
+
+
+if (document.getElementsByClassName("education-entry").length) === 0 ){
+	document.getElementById("Education").style.display = "none";
+
+
+}
+
+
+//hides the resume
+
+document.getElementById("Education").style.display = "none";
+
+
+//document
+the webpage in its current state
+
+
+//getElementById("education") is a dom method that grabs the an single page element object with the id given.
+
+in this case "education"
+//.style is a DOM Property
+.display = "none" //hides the element in question
+
+
+--JSON--
+var education = {
+
+	"schools": [
+	{
+		"name": "Univesity Of Phoenix",
+		"city": "Phoenix, AZ",
+		"degree": "MBA",
+		"major": ["Accounting"]
+	},
+	{
+		"name": "West Virginia University",
+		"city": "Morgantown, WV",
+		"degree": "BA",
+		"major": ["history", "CompSci"]
+	}, {
+		"name": "Norfolk State",
+		"city": "Norfolk, Va",
+		"degree": "BA",
+		"major": ["Airway Science"]
+	}]
+}
+
+
+
+
+-----dot notation
+
+bio.city = "Mountain View";
+bio["email"] = "James.willaims@udacity.com";
+
+$("#main").append(bio["city"]);
+$("#main").append(bio.city);
+
+
+---array---
+var skills = ["awesomeness", "programming", "teaching", "JS"];
+
+$("#main").append(skills);
+
+---Change udacity.coms header---
+at this url
+http://udacity.github.io/js-basics/static-home/index.html
+
+input this code into the consol.
+
+$(".super-header-wrapper").html("<img style='width:100%' src='http://goo.gl/WCrBmS'>");
+
+----append to an html element----
+using jquery
+
+$ means that you are using Jquery javascript library.
+
+for example.
+
+$("#header").append()
+
+#header is the element id in a div.
+
+$("#main").append("Russell E Medley III");
+
+main is the the id for this div.
+
+
+--speed of light to centimeters/nanosecond
+
+speed of light = 299792458 meters/second
+1 meter = 100 centimeters
+1 nanosecond = 1.0/1000000000 seconds
+299792458 * 100 * 1 / 1000000000 = 30 cm/ns.
+
+
+--Declaring variables
+
+var {{variableName}} = {{SomeValue}}
+
+var firstname = "james";
+
+var age = 32;
+
+//string.replace([old],[new]);
+
+var email = "medleyr3@gmail.com";
+
+var newEmail = email.replace("gmail", "yahoo");
+
+
+//$("#main").append("Russell E Medley III");
+
+
+
+//OBJECT LITERAL NOTATION
+
+var my = {}; key value pairs
+
+var skills = ["Javascript", "Html", "CSS", Github]
+
+var bio = {
+	
+ "name" : "Russell",
+ "age" : 38,
+ "skills" : skills
+}
+
+$("#main").append(bio.name);
+
+//slice
+
+var s = "audacity";
+s = s[1].toUpperCase() + s.slice(2);
+
+s[1]
+
+First, I want the "U" to be uppercase, so I use the index of the "U", which is 1, to grab it with brackets. JavaScript lets us use brackets to select one character of a string (and later, you'll see that you can do the same with an array).
+
+s[1].toUpperCase()
+
+.toUpperCase() is a string method, meaning it acts on the string it's attached to, which in this case is the "U" from s[1].
+
+At this point, s[1].toUpperCase() is equal to "U".
+
++
+
+The + concatenates, or adds together, strings. For instance "Hello " + "JS students!" will result in "Hello JS students!".
+
+s.slice(2)
+
+.slice() is another string method, which acts on the string s in this case. .slice(start, [end]) will grab the part of the string from the index of start to the index of end. The fact that [end] shows up in brackets means that it's optional. If it isn't there, then .slice() will select all of the string from start to the very end of the string. s.slice(2) gives us "dacity".
+
+Concatenated together, we get "Udacity"!
+
+//
+
+
+
+
+
