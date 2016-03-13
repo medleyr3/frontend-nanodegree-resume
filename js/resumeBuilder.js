@@ -1,6 +1,4 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
+//'use strict';
 //Bio Object
 var bio = {
 
@@ -17,22 +15,9 @@ var bio = {
 
     "welcomeMessage": "Hello, my name is Russell. I live in Pittsburgh. My favorite way to work is in the morning when I won't be distracted. In my free time, I like to make videos, music, and draw.",
     "skills": ["Javascript", "Html", "CSS", "Github"],
-    "bio_pic": "images/russ300x300.png"
+    "biopic": "images/russ300x300.png"
 };
 
-//  bio.display = function () {
-//          if (bio.skills.length > 0) {
-//     $('#header').append(HTMLskillsStart);
-//     var numberOfSkills = bio.skills.length;
-//     var currentSkill = 0;
-//     while (currentSkill < numberOfSkills){
-//       $('#skills').append(HTMLskills.replace('%data%',bio.skills[currentSkill]));
-//       currentSkill = currentSkill + 1;
-//     }
-
-// }
-
-//  }
 
 bio.display = function() {
 
@@ -50,7 +35,7 @@ bio.display = function() {
 
 
     var formattedMessage = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
-    var formattedBioPic = HTMLbioPic.replace('%data%', bio.bio_pic);
+    var formattedBioPic = HTMLbioPic.replace('%data%', bio.biopic);
     $('#pic-wel').append(formattedBioPic);
     $('#pic-wel').append(formattedMessage);
 
@@ -84,7 +69,7 @@ var education = {
         "name": "Univesity Of Phoenix",
         "location": "Phoenix, AZ",
         "degree": "MBA",
-        "majors": "Accounting",
+        "majors": ["Accounting"],
         "dates": "2006-2008",
         "url": "http://www.uop.edu"
 
@@ -92,15 +77,39 @@ var education = {
         "name": "Norfolk State",
         "location": "Norfolk, VA",
         "degree": "BA",
-        "majors": "Interdisciplinary Studies",
+        "majors": ["Interdisciplinary Studies"],
         "dates": "1995-1999",
         "url": "http://www.nsu.edu"
-    }]
-}
+    }],
+
+    "onlineCourses": [
+
+        {
+            "title": "Javascript Basics",
+            "school": "Udacity.com",
+            "dates": "2016-2016",
+            "url": "http://Udacity.com"
+        }, {
+
+            "title": "Jquery",
+            "school": "Udacity.com",
+            "dates": "2016-2016",
+            "url": "http://Udacity.com"
+
+
+
+        }
+
+
+    ]
+};
 
 education.display = function() {
 
     $('#education').append(HTMLschoolStart);
+    $('#olc').append(HTMLonlineClasses);
+    $('#olc').append(HTMLonlineStart);
+
     for (item1 = 0; item1 < education.schools.length; item1++) {
 
 
@@ -121,42 +130,12 @@ education.display = function() {
 
         $('.education-entry').append(formattedUrl);
 
-    }
-};
-var onLineCourses = {
-
-    "courses": [
-
-        {
-            "title": "Javascript Basics",
-            "school": "Udacity.com",
-            "dates": "2016",
-            "url": "http://Udacity.com"
-        }, {
-
-            "title": "Jquery",
-            "school": "Udacity.com",
-            "dates": "2016",
-            "url": "http://Udacity.com"
-
-        }
-    ]
-
-}
-
-
-
-onLineCourses.display = function() {
-
-    $('#olc').append(HTMLonlineClasses);
-    $('#olc').append(HTMLonlineStart);
-
-
-    for (item1 = 0; item1 < onLineCourses.courses.length; item1++) {
-        var onlineTitle = HTMLonlineTitle.replace('%data%', onLineCourses.courses[item1].title);
-        var onlineSchool = HTMLonlineSchool.replace('%data%', onLineCourses.courses[item1].school);
-        var onlineDates = HTMLonlineDates.replace('%data%', onLineCourses.courses[item1].dates);
-        var onlineURL = HTMLonlineURL.replace('%data%', onLineCourses.courses[item1].url);
+    };
+    for (item1 = 0; item1 < education.onlineCourses.length; item1++) {
+        var onlineTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[item1].title);
+        var onlineSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[item1].school);
+        var onlineDates = HTMLonlineDates.replace('%data%', education.onlineCourses[item1].dates);
+        var onlineURL = HTMLonlineURL.replace('%data%', education.onlineCourses[item1].url);
 
         $('.olc-entry').append(onlineSchool);
         $('.olc-entry').append(onlineTitle);
@@ -164,9 +143,7 @@ onLineCourses.display = function() {
         $('.olc-entry').append(onlineURL);
 
     }
-
 };
-
 
 
 //Work object
@@ -192,16 +169,16 @@ var work = {
 
 work.display = function() {
 
-    for (work3 in work.jobs) {
+    for (var job in work.jobs) {
 
         $('#workExperience').append(HTMLworkStart);
-        var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[work3].employer);
-        var formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[work3].title);
+        var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[job].employer);
+        var formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[job].title);
         var formattedEmployerTitle = formattedEmployer + formattedTitle;
         $('.work-entry:last').append(formattedEmployerTitle);
-        $('.work-entry:last').append(HTMLworkLocation.replace('%data%', work.jobs[work3].location));
-        $('.work-entry:last').append(HTMLworkDates.replace('%data%', work.jobs[work3].dates));
-        $('.work-entry:last').append(HTMLworkDescription.replace('%data%', work.jobs[work3].projectDescription));
+        $('.work-entry:last').append(HTMLworkLocation.replace('%data%', work.jobs[job].location));
+        $('.work-entry:last').append(HTMLworkDates.replace('%data%', work.jobs[job].dates));
+        $('.work-entry:last').append(HTMLworkDescription.replace('%data%', work.jobs[job].projectDescription));
 
     }
 };
@@ -214,15 +191,15 @@ var projects = {
     "project": [
 
         {
-            "projectName": "Portfolio Site",
-            "projectDates": "2016 ",
-            "projectDescription": "Basic Porfolio Site",
-            "projectImage": "images/project-01.svg"
+            "title": "Portfolio Site",
+            "dates": "2015-2016 ",
+            "description": "Basic Porfolio Site",
+            "images": ["images/project-01.svg"]
         }, {
-            "projectName": "Resume Site",
-            "projectDates": "2016",
-            "projectDescription": "An advanced resume site using Javascript",
-            "projectImage": "images/project-02.svg"
+            "title": "Resume Site",
+            "dates": "2016-2016",
+            "description": "An advanced resume site using Javascript",
+            "images": ["images/project-02.svg", "images/project-03.svg"]
         }
     ]
 };
@@ -230,17 +207,23 @@ var projects = {
 
 projects.display = function() {
 
-    for (item4 in projects.project) {
+    for (var project in projects.project) {
         $('#projects').append(HTMLprojectStart);
-        var formattedTitle = HTMLprojectTitle.replace('%data%', projects.project[item4].projectName);
+        var formattedTitle = HTMLprojectTitle.replace('%data%', projects.project[project].title);
         $('.project-entry:last').append(formattedTitle);
-        var formattedDates = HTMLprojectDates.replace('%data%', projects.project[item4].projectDates);
+        var formattedDates = HTMLprojectDates.replace('%data%', projects.project[project].dates);
         $('.project-entry:last').append(formattedDates);
-        var formattedDescription = HTMLprojectDescription.replace('%data%', projects.project[item4].projectDescription);
+        var formattedDescription = HTMLprojectDescription.replace('%data%', projects.project[project].description);
         $('.project-entry:last').append(formattedDescription)
-        var formattedImage = HTMLprojectImage.replace('%data%', projects.project[item4].projectImage);
-        $('.project-entry:last').append(formattedImage);
-    }
+
+        var consolProject = projects.project[project].images;
+        for (var item in consolProject) {
+            var formattedImage = HTMLprojectImage.replace('%data%', consolProject[item]);
+
+            $('.project-entry:last').append(formattedImage);
+        };
+    };
+
 };
 
 
@@ -248,19 +231,3 @@ var gmapDisplay = function() {
     $('#mapDiv').append(googleMap);
 
 };
-
-
-// function showHideArea(mainDiv,entryDiv){
-// var md, ed; 
-// md = mainDiv;
-// ed = entryDiv;
-
-//   $(entryDiv).css('display','none');
-
-// $(mainDiv).on( 'click', function() {
-//     $(entryDiv).toggleClass('bg-warning').toggle('slow', function(){
-
-//     });
-// });
-
-// };
